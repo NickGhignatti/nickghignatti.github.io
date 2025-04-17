@@ -118,3 +118,91 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Globe
+// Setup base della scena
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+
+// Renderer che verrà inserito nel div "globe-container"
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById('globe-container').appendChild(renderer.domElement);
+
+// Creazione del globo: una sfera wireframe
+const sphereGeometry = new THREE.SphereGeometry(5, 32, 32);
+const sphereMaterial = new THREE.MeshBasicMaterial({
+  color: 0xaaaaaa,
+  wireframe: true,
+});
+const globe = new THREE.Mesh(sphereGeometry, sphereMaterial);
+scene.add(globe);
+
+// Funzione per convertire coordinate latitudine/longitudine in vettori 3D
+function latLonToVector3(lat, lon, radius) {
+  const phi = (90 - lat) * (Math.PI / 180);
+  const theta = (lon + 180) * (Math.PI / 180);
+  const x = -radius * Math.sin(phi) * Math.cos(theta);
+  const y = radius * Math.cos(phi);
+  const z = radius * Math.sin(phi) * Math.sin(theta);
+  return new THREE.Vector3(x, y, z);
+}
+
+// Array di skill con relative coordinate
+const skills = [
+  { name: "HTML", lat: 10, lon: 20 },
+  { name: "CSS", lat: 15, lon: 40 },
+  { name: "JavaScript", lat: 30, lon: -60 },
+  { name: "Three.js", lat: -20, lon: 80 },
+  // Aggiungi altre skill se necessario
+];
+
+const points = [];
+const pointMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+const pointGeometry = new THREE.SphereGeometry(0.2, 8, 8);
+
+// Creazione dei punti sulla superficie del globo
+skills.forEach(skill => {
+  const pos = latLonToVector3(skill.lat, skill.lon, 5);
+  const pointMesh = new THREE.Mesh(pointGeometry, pointMaterial);
+  pointMesh.position.copy(pos);
+  scene.add(pointMesh);
+  points.push({ name: skill.name, position: pos });
+});
+
+// Collegamento tra i punti: in questo esempio, tutti collegati tra loro
+const lineMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00 });
+for (let i = 0; i < points.length; i++) {
+  for (let j = i + 1; j < points.length; j++) {
+    const geometry = new THREE.BufferGeometry().setFromPoints([
+      points[i].position,
+      points[j].position,
+    ]);
+    const line = new THREE.Line(geometry, lineMaterial);
+    scene.add(line);
+  }
+}
+
+// Posizionamento della camera
+camera.position.z = 15;
+
+// Loop di animazione: ruota il globo
+function animate() {
+  requestAnimationFrame(animate);
+  globe.rotation.y += 0.005;
+  renderer.render(scene, camera);
+}
+animate();
+
+// Gestione del ridimensionamento della finestra
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
