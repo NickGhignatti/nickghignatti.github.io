@@ -2,326 +2,385 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio</title>
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <main>
+<main>
     <aside class="sidebar" data-sidebar>
 
-      <div class="sidebar-info">
-        <figure class="avatar-box">
-          <img src="./assets/images/avatar.png" alt="Richard hanrick" width="80">
-        </figure>
-        <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Nicolò Ghignatti</h1>
-          <p class="title">Developer</p>
+        <div class="sidebar-info">
+            <figure class="avatar-box">
+                <img src="./assets/images/avatar.png" alt="Richard hanrick" width="80">
+            </figure>
+            <div class="info-content">
+                <h1 class="name" title="Richard hanrick">Nicolò Ghignatti</h1>
+                <p class="title">Developer</p>
+            </div>
+            <button class="info_more-btn" data-sidebar-btn>
+                <span>Show Contacts</span>
+                <ion-icon name="chevron-down"></ion-icon>
+            </button>
         </div>
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-      </div>
 
-      <div class="sidebar-info_more">
-        <div class="separator"></div>
-        <ul class="contacts-list">
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="nick.ghignatti@gmail.com" class="contact-link">nick.ghignatti@gmail.com</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a href="tel:+393475017788" class="contact-link">+39 347 501 7788</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-              <time datetime="2002-08-03">August 3, 2002</time>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>Brescia, Italy (IT)</address>
-            </div>
-          </li>
-        </ul>
+        <div class="sidebar-info_more">
+            <div class="separator"></div>
+            <ul class="contacts-list">
+                <li class="contact-item">
+                    <div class="icon-box">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <div class="contact-info">
+                        <p class="contact-title">Email</p>
+                        <a href="nick.ghignatti@gmail.com" class="contact-link">nick.ghignatti@gmail.com</a>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <div class="icon-box">
+                        <ion-icon name="phone-portrait-outline"></ion-icon>
+                    </div>
+                    <div class="contact-info">
+                        <p class="contact-title">Phone</p>
+                        <a href="tel:+393475017788" class="contact-link">+39 347 501 7788</a>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <div class="icon-box">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                    </div>
+                    <div class="contact-info">
+                        <p class="contact-title">Birthday</p>
+                        <time datetime="2002-08-03">August 3, 2002</time>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <div class="icon-box">
+                        <ion-icon name="location-outline"></ion-icon>
+                    </div>
+                    <div class="contact-info">
+                        <p class="contact-title">Location</p>
+                        <address>Brescia, Italy (IT)</address>
+                    </div>
+                </li>
+            </ul>
 
-        <div class="separator"></div>
-        <ul class="social-list">
-          <li class="social-item">
-            <a href="https://www.instagram.com/nickghignatti" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-        </ul>
-      </div>
+            <div class="separator"></div>
+            <ul class="social-list">
+                <li class="social-item">
+                    <a href="https://www.instagram.com/nickghignatti" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </aside>
 
     <div class="main-content">
 
-      <nav class="navbar">
-        <ul class="navbar-list">
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-        </ul>
-      </nav>
-
-      <article class="about active" data-page="about">
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-        <section class="about-text">
-          <p>
-            I'm a young and ambitious developer with a passion for technology and innovation. I have a strong interest
-            in the
-            High-Performance Computing field and the development of new technologies.
-          </p>
-          <p>
-            I'm currently studying Computer Science at Alma Mater Studiorum (University of Bologna), currently enrolled
-            in a master degree.
-            Thanks to my studies, I have acquired a strong interest in the HPC world, where I'd like to work in the
-            future. Due to my previous
-            experiences, I have developed some kind of interest in the business world, where my Web3 projects are born.
-          </p>
-        </section>
-
-        <section class="service">
-          <h3 class="h3 service-title">What i'm doing</h3>
-          <ul class="service-list">
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg
-                " alt="design icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">IT Student</h4>
-                <p class="service-item-text">
-                  I'm currently studying Computer Science at Alma Mater Studiorum (University of Bologna), currently
-                  enrolled in a master degree.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </section>
-      </article>
-
-      <article class="resume" data-page="resume">
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Education</h3>
-          </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Alma Mater Studiorum</h4>
-              <span>2021-2024</span>
-              <p class="timeline-text">
-                Bachelor degree in Engineering and Computer Science
-              </p>
-            </li>
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Alma Mater Studiorum</h4>
-              <span>2024 - Current</span>
-              <p class="timeline-text">
-                Master degree in Engineering and Computer Science
-              </p>
-            </li>
-          </ol>
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Web3 Developer</h4>
-              <span>Mar 2024 — Jun 2024</span>
-              <p class="timeline-text">
-                Internship in Quinck, where I worked to a Web3 application on ICP blockchain using Rust.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Backend Developer/h4>
-              <span>Jan 2021 - May 2021</span>
-              <p class="timeline-text">
-                School project where I built a face recognition app for the early bike competition in my city.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Technician</h4>
-              <span>Sep 2020 - Oct 2020</span>
-              <p class="timeline-text">
-                Internship in Prague, at Smichov Secondary Technical School, to autmize the school's parking spot.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Backend Developer</h4>
-              <span>May 2019 - Jun 2019</span>
-              <p class="timeline-text">
-                Internship in Dinema SpA where I worked on a the backend management application in C#.
-              </p>
-            </li>
-          </ol>
-        </section>
-
-        <section class="skill">
-          <h3 class="h3 skills-title">My skills</h3>
-        </section>
-      </article>
-
-      <article class="portfolio" data-page="portfolio">
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-        <section class="projects">
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>HPC</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Web3</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn></button>
-            </li>
-          </ul>
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-            <ul class="select-list">
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>HPC</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Web3</button>
-              </li>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <button class="navbar-link active" data-nav-link>About</button>
+                </li>
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link>Resume</button>
+                </li>
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link>Portfolio</button>
+                </li>
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link>Contact</button>
+                </li>
             </ul>
-          </div>
-          <ul class="project-list">
-            <li class="project-item  active" data-filter-item data-category="all">
-              <a href="https://github.com/iamgio/OOP22-pixformer">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project_1.png" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">PixFormer</h3>
-                <p class="project-category">Java Game Development</p>
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="web3">
-              <a href="https://github.com/NickGhignatti/stakeshare">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project_2.png" alt="orizon" loading="lazy">
-                </figure>
-                <h3 class="project-title">Stakeshare</h3>
-                <p class="project-category">Web3 development</p>
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="HPC">
-              <a href="https://github.com/NickGhignatti/hpc-project">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project_3.png" alt="orizon" loading="lazy">
-                </figure>
-                <h3 class="project-title">HPC circles</h3>
-                <p class="project-category">HPC development</p>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </article>
+        </nav>
 
-      <article class="contact" data-page="contact">
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
-          <form action="#" class="form" data-form>
-            <input type="text" name="subject" class="form-input" placeholder="Subject" required data-form-input>
-            <br>
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </section>
-      </article>
+        <article class="about active" data-page="about">
+            <header>
+                <h2 class="h2 article-title">About me</h2>
+            </header>
+            <section class="about-text">
+                <p>
+                    I'm a young and ambitious developer with a passion for technology and innovation. I have a strong
+                    interest
+                    in the
+                    High-Performance Computing field and the development of new technologies.
+                </p>
+                <p>
+                    I'm currently studying Computer Science at Alma Mater Studiorum (University of Bologna), currently
+                    enrolled
+                    in a master degree.
+                    Thanks to my studies, I have acquired a strong interest in the HPC world, where I'd like to work in
+                    the
+                    future. Due to my previous
+                    experiences, I have developed some kind of interest in the business world, where my Web3 projects
+                    are born.
+                </p>
+            </section>
+
+            <section class="service">
+                <h3 class="h3 service-title">What i'm doing</h3>
+                <ul class="service-list">
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="./assets/images/icon-dev.svg
+                " alt="design icon" width="40">
+                        </div>
+                        <div class="service-content-box">
+                            <h4 class="h4 service-item-title">IT Student</h4>
+                            <p class="service-item-text">
+                                I'm currently studying Computer Science at Alma Mater Studiorum (University of Bologna),
+                                currently
+                                enrolled in a master degree.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+        <article class="resume" data-page="resume">
+            <header>
+                <h2 class="h2 article-title">Resume</h2>
+            </header>
+            <section class="timeline">
+                <div class="title-wrapper">
+                    <div class="icon-box">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3">Education</h3>
+                </div>
+                <ol class="timeline-list">
+                    <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Alma Mater Studiorum</h4>
+                        <span>2021-2024</span>
+                        <p class="timeline-text">
+                            Bachelor degree in Engineering and Computer Science
+                        </p>
+                    </li>
+                    <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Alma Mater Studiorum</h4>
+                        <span>2024 - Current</span>
+                        <p class="timeline-text">
+                            Master degree in Engineering and Computer Science
+                        </p>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="timeline">
+
+                <div class="title-wrapper">
+                    <div class="icon-box">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+
+                    <h3 class="h3">Experience</h3>
+                </div>
+
+                <ol class="timeline-list">
+                    <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Web3 Developer</h4>
+                        <span>Mar 2024 — Jun 2024</span>
+                        <p class="timeline-text">
+                            Internship in Quinck, where I worked to a Web3 application on ICP blockchain using Rust.
+                        </p>
+                    </li>
+
+                    <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Backend Developer</h4>
+                        <span>Jan 2021 - May 2021</span>
+                        <p class="timeline-text">
+                            School project where I built a face recognition app for the early bike competition in my
+                            city.
+                        </p>
+                    </li>
+
+                    <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Technician</h4>
+                        <span>Sep 2020 - Oct 2020</span>
+                        <p class="timeline-text">
+                            Internship in Prague, at Smichov Secondary Technical School, to autmize the school's parking
+                            spot.
+                        </p>
+                    </li>
+
+                    <li class="timeline-item">
+                        <h4 class="h4 timeline-item-title">Backend Developer</h4>
+                        <span>May 2019 - Jun 2019</span>
+                        <p class="timeline-text">
+                            Internship in Dinema SpA where I worked on a the backend management application in C#.
+                        </p>
+                    </li>
+                </ol>
+            </section>
+
+            <!--        <section class="skill">-->
+            <!--          <h3 class="h3 skills-title">My skills</h3>-->
+            <!--        </section>-->
+        </article>
+
+        <article class="portfolio" data-page="portfolio">
+            <header>
+                <h2 class="h2 article-title">Portfolio</h2>
+            </header>
+            <section class="projects">
+                <ul class="filter-list">
+                    <li class="filter-item">
+                        <button class="active" data-filter-btn>All</button>
+                    </li>
+                    <li class="filter-item">
+                        <button data-filter-btn>hpc</button>
+                    </li>
+                    <li class="filter-item">
+                        <button data-filter-btn>web3</button>
+                    </li>
+                    <li class="filter-item">
+                        <button data-filter-btn>distributed</button>
+                    </li>
+                    <li class="filter-item">
+                        <button data-filter-btn>fp</button>
+                    </li>
+                    <li class="filter-item">
+                        <button data-filter-btn>oop</button>
+                    </li>
+                </ul>
+                <div class="filter-select-box">
+                    <button class="filter-select" data-select>
+                        <div class="select-value" data-selecct-value>Select category</div>
+                        <div class="select-icon">
+                            <ion-icon name="chevron-down"></ion-icon>
+                        </div>
+                    </button>
+                    <ul class="select-list">
+                        <li class="select-item">
+                            <button data-select-item>All</button>
+                        </li>
+                        <li class="select-item">
+                            <button data-select-item>hpc</button>
+                        </li>
+                        <li class="select-item">
+                            <button data-select-item>web3</button>
+                        </li>
+                        <li class="select-item">
+                            <button data-select-item>distributed</button>
+                        </li>
+                        <li class="select-item">
+                            <button data-select-item>fp</button>
+                        </li>
+                        <li class="select-item">
+                            <button data-select-item>oop</button>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="project-list">
+                    <li class="project-item  active" data-filter-item data-category="oop">
+                        <a href="https://github.com/iamgio/OOP22-pixformer">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+                                <img src="./assets/images/project_1.png" alt="finance" loading="lazy">
+                            </figure>
+                            <h3 class="project-title">PixFormer</h3>
+                            <p class="project-category">Java Game Development</p>
+                        </a>
+                    </li>
+                    <li class="project-item  active" data-filter-item data-category="web3">
+                        <a href="https://github.com/NickGhignatti/stakeshare">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+                                <img src="./assets/images/project_2.png" alt="orizon" loading="lazy">
+                            </figure>
+                            <h3 class="project-title">Stakeshare</h3>
+                            <p class="project-category">Web3 development</p>
+                        </a>
+                    </li>
+                    <li class="project-item  active" data-filter-item data-category="hpc">
+                        <a href="https://github.com/NickGhignatti/hpc-project">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+                                <img src="./assets/images/project_3.png" alt="orizon" loading="lazy">
+                            </figure>
+                            <h3 class="project-title">HPC circles</h3>
+                            <p class="project-category">HPC development</p>
+                        </a>
+                    </li>
+                    <li class="project-item  active" data-filter-item data-category="fp">
+                        <a href="https://github.com/NickGhignatti/casimo">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+                                <img src="./assets/images/project_4.png" alt="orizon" loading="lazy">
+                            </figure>
+                            <h3 class="project-title">Casimo</h3>
+                            <p class="project-category">Scala functional programming</p>
+                        </a>
+                    </li>
+                    <li class="project-item  active" data-filter-item data-category="distributed, oop">
+                        <a href="https://github.com/NickGhignatti/java-rmi-agario">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+                                <img src="./assets/images/project_5.png" alt="orizon" loading="lazy">
+                            </figure>
+                            <h3 class="project-title">Agar.IO with Java RMI</h3>
+                            <p class="project-category">Distributed Programming</p>
+                        </a>
+                    </li>
+                    <li class="project-item  active" data-filter-item data-category="distributed, hpc, fp">
+                        <a href="https://github.com/NickGhignatti/akka-distributed-boids">
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+                                <img src="./assets/images/project_6.png" alt="orizon" loading="lazy">
+                            </figure>
+                            <h3 class="project-title">Distributed boids with Akka (Scala)</h3>
+                            <p class="project-category">Distributed Programming</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+        <article class="contact" data-page="contact">
+            <header>
+                <h2 class="h2 article-title">Contact</h2>
+            </header>
+            <section class="contact-form">
+                <h3 class="h3 form-title">Contact Form</h3>
+                <form action="#" class="form" data-form>
+                    <input type="text" name="subject" class="form-input" placeholder="Subject" required data-form-input>
+                    <br>
+                    <textarea name="message" class="form-input" placeholder="Your Message" required
+                              data-form-input></textarea>
+                    <button class="form-btn" type="submit" disabled data-form-btn>
+                        <ion-icon name="paper-plane"></ion-icon>
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </section>
+        </article>
     </div>
-  </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r145/three.min.js" type="text/html"></script>
-  <script src="./assets/js/script.js" type="module"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r145/three.min.js" type="text/html"></script>
+<script src="./assets/js/script.js" type="module"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
