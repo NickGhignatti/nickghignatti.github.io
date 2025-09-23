@@ -1,387 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
-    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Nicolò Ghignatti - Engineering & Computer Science Student</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-<main>
-    <aside class="sidebar" data-sidebar>
-
-        <div class="sidebar-info">
-            <figure class="avatar-box">
-                <img src="./assets/images/avatar.png" alt="Richard hanrick" width="80">
-            </figure>
-            <div class="info-content">
-                <h1 class="name" title="Richard hanrick">Nicolò Ghignatti</h1>
-                <p class="title">Developer</p>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Nicolò Ghignatti</a>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button class="info_more-btn" data-sidebar-btn>
-                <span>Show Contacts</span>
-                <ion-icon name="chevron-down"></ion-icon>
-            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+    </nav>
 
-        <div class="sidebar-info_more">
-            <div class="separator"></div>
-            <ul class="contacts-list">
-                <li class="contact-item">
-                    <div class="icon-box">
-                        <ion-icon name="mail-outline"></ion-icon>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Nick Ghignatti</span>
+                </h1>
+                <p class="hero-subtitle">Computer Science Student & Aspiring HPC Developer</p>
+                <p class="hero-description">
+                    Passionate about pushing the boundaries of computational performance and exploring the transformative potential of blockchain technologies.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn--primary">View Projects</a>
+                    <a href="#contact" class="btn btn--outline">Get In Touch</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="4">0</span>
+                        <span class="stat-label">Years Studying</span>
                     </div>
-                    <div class="contact-info">
-                        <p class="contact-title">Email</p>
-                        <a href="nick.ghignatti@gmail.com" class="contact-link">nick.ghignatti@gmail.com</a>
+                    <div class="stat">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Projects</span>
                     </div>
-                </li>
-                <li class="contact-item">
-                    <div class="icon-box">
-                        <ion-icon name="phone-portrait-outline"></ion-icon>
+                    <div class="stat">
+                        <span class="stat-number" data-target="20">0</span>
+                        <span class="stat-label">Technologies</span>
                     </div>
-                    <div class="contact-info">
-                        <p class="contact-title">Phone</p>
-                        <a href="tel:+393475017788" class="contact-link">+39 347 501 7788</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <img src="https://ui-avatars.com/api/?name=Nick+Ghignatti&size=300&background=21809B&color=ffffff&font-size=0.6" alt="Nick Ghignatti" />
                     </div>
-                </li>
-                <li class="contact-item">
-                    <div class="icon-box">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                    </div>
-                    <div class="contact-info">
-                        <p class="contact-title">Birthday</p>
-                        <time datetime="2002-08-03">August 3, 2002</time>
-                    </div>
-                </li>
-                <li class="contact-item">
-                    <div class="icon-box">
-                        <ion-icon name="location-outline"></ion-icon>
-                    </div>
-                    <div class="contact-info">
-                        <p class="contact-title">Location</p>
-                        <address>Brescia, Italy (IT)</address>
-                    </div>
-                </li>
-            </ul>
-
-            <div class="separator"></div>
-            <ul class="social-list">
-                <li class="social-item">
-                    <a href="https://www.instagram.com/nickghignatti" class="social-link">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </a>
-                </li>
-            </ul>
+                    <div class="avatar-ring"></div>
+                </div>
+            </div>
         </div>
-    </aside>
+    </section>
 
-    <div class="main-content">
-
-        <nav class="navbar">
-            <ul class="navbar-list">
-                <li class="navbar-item">
-                    <button class="navbar-link active" data-nav-link>About</button>
-                </li>
-                <li class="navbar-item">
-                    <button class="navbar-link" data-nav-link>Resume</button>
-                </li>
-                <li class="navbar-item">
-                    <button class="navbar-link" data-nav-link>Portfolio</button>
-                </li>
-                <li class="navbar-item">
-                    <button class="navbar-link" data-nav-link>Contact</button>
-                </li>
-            </ul>
-        </nav>
-
-        <article class="about active" data-page="about">
-            <header>
-                <h2 class="h2 article-title">About me</h2>
-            </header>
-            <section class="about-text">
-                <p>
-                    I'm a young and ambitious developer with a passion for technology and innovation. I have a strong
-                    interest
-                    in the
-                    High-Performance Computing field and the development of new technologies.
-                </p>
-                <p>
-                    I'm currently studying Computer Science at Alma Mater Studiorum (University of Bologna), currently
-                    enrolled
-                    in a master degree.
-                    Thanks to my studies, I have acquired a strong interest in the HPC world, where I'd like to work in
-                    the
-                    future. Due to my previous
-                    experiences, I have developed some kind of interest in the business world, where my Web3 projects
-                    are born.
-                </p>
-            </section>
-
-            <section class="service">
-                <h3 class="h3 service-title">What i'm doing</h3>
-                <ul class="service-list">
-                    <li class="service-item">
-                        <div class="service-icon-box">
-                            <img src="./assets/images/icon-dev.svg
-                " alt="design icon" width="40">
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        As a Computer Science graduate student at the prestigious University of Bologna, I'm passionate about pushing the boundaries of computational performance and exploring the transformative potential of blockchain technologies.
+                    </p>
+                    <p>
+                        My academic journey has equipped me with a deep understanding of distributed systems, parallel computing, and modern web technologies. When I'm not optimizing algorithms or building decentralized applications, you'll find me contributing to open-source projects and staying at the forefront of technological innovation.
+                    </p>
+                    <div class="about-interests">
+                        <div class="interest-item">
+                            <span class="interest-icon">⚡</span>
+                            <div>
+                                <h4>High-Performance Computing</h4>
+                                <p>Optimizing parallel algorithms and distributed systems for maximum computational efficiency.</p>
+                            </div>
                         </div>
-                        <div class="service-content-box">
-                            <h4 class="h4 service-item-title">IT Student</h4>
-                            <p class="service-item-text">
-                                I'm currently studying Computer Science at Alma Mater Studiorum (University of Bologna),
-                                currently
-                                enrolled in a master degree.
-                            </p>
+                        <div class="interest-item">
+                            <span class="interest-icon">⛓️</span>
+                            <div>
+                                <h4>Web3 & Blockchain</h4>
+                                <p>Building decentralized applications and exploring the future of distributed ledger technology.</p>
+                            </div>
                         </div>
-                    </li>
-                </ul>
-            </section>
-        </article>
-
-        <article class="resume" data-page="resume">
-            <header>
-                <h2 class="h2 article-title">Resume</h2>
-            </header>
-            <section class="timeline">
-                <div class="title-wrapper">
-                    <div class="icon-box">
-                        <ion-icon name="book-outline"></ion-icon>
+                        <div class="interest-item">
+                            <span class="interest-icon">🌐</span>
+                            <div>
+                                <h4>Distributed Systems</h4>
+                                <p>Designing scalable architectures that can handle massive computational workloads.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="h3">Education</h3>
                 </div>
-                <ol class="timeline-list">
-                    <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Alma Mater Studiorum</h4>
-                        <span>2021-2024</span>
-                        <p class="timeline-text">
-                            Bachelor degree in Engineering and Computer Science
-                        </p>
-                    </li>
-                    <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Alma Mater Studiorum</h4>
-                        <span>2024 - Current</span>
-                        <p class="timeline-text">
-                            Master degree in Engineering and Computer Science
-                        </p>
-                    </li>
-                </ol>
-            </section>
-
-            <section class="timeline">
-
-                <div class="title-wrapper">
-                    <div class="icon-box">
-                        <ion-icon name="book-outline"></ion-icon>
-                    </div>
-
-                    <h3 class="h3">Experience</h3>
-                </div>
-
-                <ol class="timeline-list">
-                    <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Web3 Developer</h4>
-                        <span>Mar 2024 — Jun 2024</span>
-                        <p class="timeline-text">
-                            Internship in Quinck, where I worked to a Web3 application on ICP blockchain using Rust.
-                        </p>
-                    </li>
-
-                    <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Backend Developer</h4>
-                        <span>Jan 2021 - May 2021</span>
-                        <p class="timeline-text">
-                            School project where I built a face recognition app for the early bike competition in my
-                            city.
-                        </p>
-                    </li>
-
-                    <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Technician</h4>
-                        <span>Sep 2020 - Oct 2020</span>
-                        <p class="timeline-text">
-                            Internship in Prague, at Smichov Secondary Technical School, to autmize the school's parking
-                            spot.
-                        </p>
-                    </li>
-
-                    <li class="timeline-item">
-                        <h4 class="h4 timeline-item-title">Backend Developer</h4>
-                        <span>May 2019 - Jun 2019</span>
-                        <p class="timeline-text">
-                            Internship in Dinema SpA where I worked on a the backend management application in C#.
-                        </p>
-                    </li>
-                </ol>
-            </section>
-
-            <!--        <section class="skill">-->
-            <!--          <h3 class="h3 skills-title">My skills</h3>-->
-            <!--        </section>-->
-        </article>
-
-        <article class="portfolio" data-page="portfolio">
-            <header>
-                <h2 class="h2 article-title">Portfolio</h2>
-            </header>
-            <section class="projects">
-                <ul class="filter-list">
-                    <li class="filter-item">
-                        <button class="active" data-filter-btn>All</button>
-                    </li>
-                    <li class="filter-item">
-                        <button data-filter-btn>hpc</button>
-                    </li>
-                    <li class="filter-item">
-                        <button data-filter-btn>web3</button>
-                    </li>
-                    <li class="filter-item">
-                        <button data-filter-btn>distributed</button>
-                    </li>
-                    <li class="filter-item">
-                        <button data-filter-btn>fp</button>
-                    </li>
-                    <li class="filter-item">
-                        <button data-filter-btn>oop</button>
-                    </li>
-                </ul>
-                <div class="filter-select-box">
-                    <button class="filter-select" data-select>
-                        <div class="select-value" data-selecct-value>Select category</div>
-                        <div class="select-icon">
-                            <ion-icon name="chevron-down"></ion-icon>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>🎓</h3>
+                        <div class="stat-info">
+                            <span class="stat-title">Education</span>
+                            <span class="stat-desc">University of Bologna</span>
                         </div>
-                    </button>
-                    <ul class="select-list">
-                        <li class="select-item">
-                            <button data-select-item>All</button>
-                        </li>
-                        <li class="select-item">
-                            <button data-select-item>hpc</button>
-                        </li>
-                        <li class="select-item">
-                            <button data-select-item>web3</button>
-                        </li>
-                        <li class="select-item">
-                            <button data-select-item>distributed</button>
-                        </li>
-                        <li class="select-item">
-                            <button data-select-item>fp</button>
-                        </li>
-                        <li class="select-item">
-                            <button data-select-item>oop</button>
-                        </li>
-                    </ul>
+                    </div>
+                    <div class="stat-card">
+                        <h3>📍</h3>
+                        <div class="stat-info">
+                            <span class="stat-title">Location</span>
+                            <span class="stat-desc">Bologna, Italy</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>💡</h3>
+                        <div class="stat-info">
+                            <span class="stat-title">Focus Areas</span>
+                            <span class="stat-desc">HPC & Web3</span>
+                        </div>
+                    </div>
                 </div>
-                <ul class="project-list">
-                    <li class="project-item  active" data-filter-item data-category="oop">
-                        <a href="https://github.com/iamgio/OOP22-pixformer">
-                            <figure class="project-img">
-                                <div class="project-item-icon-box">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                </div>
-                                <img src="./assets/images/project_1.png" alt="finance" loading="lazy">
-                            </figure>
-                            <h3 class="project-title">PixFormer</h3>
-                            <p class="project-category">Java Game Development</p>
-                        </a>
-                    </li>
-                    <li class="project-item  active" data-filter-item data-category="web3">
-                        <a href="https://github.com/NickGhignatti/stakeshare">
-                            <figure class="project-img">
-                                <div class="project-item-icon-box">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                </div>
-                                <img src="./assets/images/project_2.png" alt="orizon" loading="lazy">
-                            </figure>
-                            <h3 class="project-title">Stakeshare</h3>
-                            <p class="project-category">Web3 development</p>
-                        </a>
-                    </li>
-                    <li class="project-item  active" data-filter-item data-category="hpc">
-                        <a href="https://github.com/NickGhignatti/hpc-project">
-                            <figure class="project-img">
-                                <div class="project-item-icon-box">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                </div>
-                                <img src="./assets/images/project_3.png" alt="orizon" loading="lazy">
-                            </figure>
-                            <h3 class="project-title">HPC circles</h3>
-                            <p class="project-category">HPC development</p>
-                        </a>
-                    </li>
-                    <li class="project-item  active" data-filter-item data-category="fp">
-                        <a href="https://github.com/NickGhignatti/casimo">
-                            <figure class="project-img">
-                                <div class="project-item-icon-box">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                </div>
-                                <img src="./assets/images/project_4.png" alt="orizon" loading="lazy">
-                            </figure>
-                            <h3 class="project-title">Casimo</h3>
-                            <p class="project-category">Scala functional programming</p>
-                        </a>
-                    </li>
-                    <li class="project-item  active" data-filter-item data-category="distributed, oop">
-                        <a href="https://github.com/NickGhignatti/java-rmi-agario">
-                            <figure class="project-img">
-                                <div class="project-item-icon-box">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                </div>
-                                <img src="./assets/images/project_5.png" alt="orizon" loading="lazy">
-                            </figure>
-                            <h3 class="project-title">Agar.IO with Java RMI</h3>
-                            <p class="project-category">Distributed Programming</p>
-                        </a>
-                    </li>
-                    <li class="project-item  active" data-filter-item data-category="distributed, hpc, fp">
-                        <a href="https://github.com/NickGhignatti/akka-distributed-boids">
-                            <figure class="project-img">
-                                <div class="project-item-icon-box">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                </div>
-                                <img src="./assets/images/project_6.png" alt="orizon" loading="lazy">
-                            </figure>
-                            <h3 class="project-title">Distributed boids with Akka (Scala)</h3>
-                            <p class="project-category">Distributed Programming</p>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-        </article>
+            </div>
+        </div>
+    </section>
 
-        <article class="contact" data-page="contact">
-            <header>
-                <h2 class="h2 article-title">Contact</h2>
-            </header>
-            <section class="contact-form">
-                <h3 class="h3 form-title">Contact Form</h3>
-                <form action="#" class="form" data-form>
-                    <input type="text" name="subject" class="form-input" placeholder="Subject" required data-form-input>
-                    <br>
-                    <textarea name="message" class="form-input" placeholder="Your Message" required
-                              data-form-input></textarea>
-                    <button class="form-btn" type="submit" disabled data-form-btn>
-                        <ion-icon name="paper-plane"></ion-icon>
-                        <span>Send Message</span>
-                    </button>
-                </form>
-            </section>
-        </article>
-    </div>
-</main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r145/three.min.js" type="text/html"></script>
-<script src="./assets/js/script.js" type="module"></script>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Skills Banner Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="skills-subtitle">My technical expertise across different domains</p>
+            
+            <div class="skills-banner-container">
+                <div class="skills-banner" id="skills-banner">
+                    <div class="skills-track">
+                        <!-- Skills from the data -->
+                        <div class="skill-item" data-skill="Java">
+                            <span class="skill-icon">☕</span>
+                            <span class="skill-name">Java</span>
+                        </div>
+                        <div class="skill-item" data-skill="C">
+                            <span class="skill-icon">🔧</span>
+                            <span class="skill-name">C</span>
+                        </div>
+                        <div class="skill-item" data-skill="Python">
+                            <span class="skill-icon">🐍</span>
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-item" data-skill="C#">
+                            <span class="skill-icon">🔷</span>
+                            <span class="skill-name">C#</span>
+                        </div>
+                        <div class="skill-item" data-skill="PHP">
+                            <span class="skill-icon">🐘</span>
+                            <span class="skill-name">PHP</span>
+                        </div>
+                        <div class="skill-item" data-skill="Rust">
+                            <span class="skill-icon">🦀</span>
+                            <span class="skill-name">Rust</span>
+                        </div>
+                        <div class="skill-item" data-skill="CUDA">
+                            <span class="skill-icon">🎮</span>
+                            <span class="skill-name">CUDA</span>
+                        </div>
+                        <div class="skill-item" data-skill="Scala">
+                            <span class="skill-icon">📈</span>
+                            <span class="skill-name">Scala</span>
+                        </div>
+                        <div class="skill-item" data-skill="GoLang">
+                            <span class="skill-icon">🐹</span>
+                            <span class="skill-name">GoLang</span>
+                        </div>
+                        <div class="skill-item" data-skill="SQL">
+                            <span class="skill-icon">🗃️</span>
+                            <span class="skill-name">SQL</span>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
+                            <span class="skill-icon">🟨</span>
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-item" data-skill="Vue">
+                            <span class="skill-icon">💚</span>
+                            <span class="skill-name">Vue</span>
+                        </div>
+                        <div class="skill-item" data-skill="TypeScript">
+                            <span class="skill-icon">🔵</span>
+                            <span class="skill-name">TypeScript</span>
+                        </div>
+                        <div class="skill-item" data-skill="Docker">
+                            <span class="skill-icon">🐳</span>
+                            <span class="skill-name">Docker</span>
+                        </div>
+                        
+                        <!-- Duplicate for seamless scrolling -->
+                        <div class="skill-item" data-skill="Java">
+                            <span class="skill-icon">☕</span>
+                            <span class="skill-name">Java</span>
+                        </div>
+                        <div class="skill-item" data-skill="C">
+                            <span class="skill-icon">🔧</span>
+                            <span class="skill-name">C</span>
+                        </div>
+                        <div class="skill-item" data-skill="Python">
+                            <span class="skill-icon">🐍</span>
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-item" data-skill="C#">
+                            <span class="skill-icon">🔷</span>
+                            <span class="skill-name">C#</span>
+                        </div>
+                        <div class="skill-item" data-skill="PHP">
+                            <span class="skill-icon">🐘</span>
+                            <span class="skill-name">PHP</span>
+                        </div>
+                        <div class="skill-item" data-skill="Rust">
+                            <span class="skill-icon">🦀</span>
+                            <span class="skill-name">Rust</span>
+                        </div>
+                        <div class="skill-item" data-skill="CUDA">
+                            <span class="skill-icon">🎮</span>
+                            <span class="skill-name">CUDA</span>
+                        </div>
+                        <div class="skill-item" data-skill="Scala">
+                            <span class="skill-icon">📈</span>
+                            <span class="skill-name">Scala</span>
+                        </div>
+                        <div class="skill-item" data-skill="GoLang">
+                            <span class="skill-icon">🐹</span>
+                            <span class="skill-name">GoLang</span>
+                        </div>
+                        <div class="skill-item" data-skill="SQL">
+                            <span class="skill-icon">🗃️</span>
+                            <span class="skill-name">SQL</span>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
+                            <span class="skill-icon">🟨</span>
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-item" data-skill="Vue">
+                            <span class="skill-icon">💚</span>
+                            <span class="skill-name">Vue</span>
+                        </div>
+                        <div class="skill-item" data-skill="TypeScript">
+                            <span class="skill-icon">🔵</span>
+                            <span class="skill-name">TypeScript</span>
+                        </div>
+                        <div class="skill-item" data-skill="Docker">
+                            <span class="skill-icon">🐳</span>
+                            <span class="skill-name">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="hpc">HPC</button>
+                <button class="filter-btn" data-filter="web3">Web3</button>
+                <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="hpc">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/nickghignatti/hpc-analyzer" target="_blank" class="project-link">GitHub</a>
+                                <a href="https://hpc-analyzer-demo.com" target="_blank" class="project-link">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HPC Performance Analyzer</h3>
+                        <p class="project-description">A comprehensive tool for analyzing and optimizing parallel computing performance across multiple architectures.</p>
+                        <div class="project-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">OpenMP</span>
+                            <span class="tag">MPI</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web3">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/nickghignatti/defi-aggregator" target="_blank" class="project-link">GitHub</a>
+                                <a href="https://defi-aggregator.netlify.app" target="_blank" class="project-link">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">DeFi Yield Aggregator</h3>
+                        <p class="project-description">A decentralized finance application that automatically finds and compounds the best yield opportunities.</p>
+                        <div class="project-tags">
+                            <span class="tag">Solidity</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Web3.js</span>
+                            <span class="tag">Ethereum</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="hpc">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/nickghignatti/distributed-framework" target="_blank" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Distributed Computing Framework</h3>
+                        <p class="project-description">A lightweight framework for distributed task execution with automatic load balancing and fault tolerance.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">ZeroMQ</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Redis</span>
+                        </div>
+                        <div class="project-status in-progress">In Progress</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web3">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/nickghignatti/blockchain-voting" target="_blank" class="project-link">GitHub</a>
+                                <a href="https://blockchain-voting-demo.com" target="_blank" class="project-link">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Blockchain Voting System</h3>
+                        <p class="project-description">A secure, transparent voting system built on Ethereum with zero-knowledge proofs for voter privacy.</p>
+                        <div class="project-tags">
+                            <span class="tag">Solidity</span>
+                            <span class="tag">React</span>
+                            <span class="tag">IPFS</span>
+                            <span class="tag">Hardhat</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="full-stack">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/nickghignatti/data-pipeline" target="_blank" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Real-time Data Pipeline</h3>
+                        <p class="project-description">A high-throughput data processing pipeline capable of handling millions of events per second.</p>
+                        <div class="project-tags">
+                            <span class="tag">Apache Kafka</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">Kubernetes</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="hpc">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/nickghignatti/nn-optimizer" target="_blank" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Neural Network Optimizer</h3>
+                        <p class="project-description">GPU-accelerated neural network training optimization using CUDA.</p>
+                        <div class="project-tags">
+                            <span class="tag">CUDA</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">TensorFlow</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web3">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/nickghignatti/portfolio-dapp" target="_blank" class="project-link">GitHub</a>
+                                <a href="https://portfolio-dapp.vercel.app" target="_blank" class="project-link">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Management DApp</h3>
+                        <p class="project-description">Decentralized application for automated cryptocurrency portfolio rebalancing.</p>
+                        <div class="project-tags">
+                            <span class="tag">Solidity</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Ethers.js</span>
+                            <span class="tag">Polygon</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="full-stack">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/nickghignatti/microservices-analytics" target="_blank" class="project-link">GitHub</a>
+                                <a href="https://analytics-demo.com" target="_blank" class="project-link">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Microservices Analytics</h3>
+                        <p class="project-description">Full-stack application for monitoring and analyzing microservices performance.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>I'm always open to discussing new opportunities, collaborations, or just having a conversation about technology and innovation.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:nick.ghignatti@gmail.com">nick.ghignatti@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <h4>Location</h4>
+                                <span>Brescia, Italy</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💼</span>
+                            <div>
+                                <h4>Status</h4>
+                                <span>Available for opportunities</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/nickghignatti" target="_blank" class="social-link">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/nickghignatti" target="_blank" class="social-link">
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Nicolò Ghignatti</h3>
+                    <p>Engineering & Computer Science Student</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/nickghignatti" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/nicol%C3%B2-ghignatti-8884652b3/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nicolò Ghignatti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
 </body>
-
 </html>
