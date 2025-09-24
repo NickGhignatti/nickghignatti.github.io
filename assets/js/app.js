@@ -161,7 +161,7 @@ function showSkillInfo(skillName) {
     showNotification(`${skillName}: ${description}`, 'info', 5000);
 }
 
-// Project filtering functionality - FIXED
+// Project filtering functionality
 function initProjectFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
@@ -180,7 +180,7 @@ function initProjectFilters() {
             // Filter project cards
             projectCards.forEach((card) => {
                 const category = card.getAttribute('data-category');
-                const shouldShow = filter === 'all' || category === filter;
+                const shouldShow = filter === 'all' || category.includes(filter);
                 
                 if (shouldShow) {
                     card.style.display = 'block';
@@ -202,7 +202,7 @@ function initProjectFilters() {
                 const message = filter === 'all' 
                     ? `Showing all projects` 
                     : `Showing ${visibleCount} ${filterText} projects`;
-                showNotification(message, 'info', 2000);
+                // showNotification(message, 'info', 2000);
             }, 300);
         });
     });
