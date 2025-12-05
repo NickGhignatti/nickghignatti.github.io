@@ -1,561 +1,388 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolò Ghignatti - Engineering & Computer Science Student</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">Nicolò Ghignatti</a>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#hero" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<html lang="en" class="scroll-smooth dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nick Ghignatti | Software Engineer</title>
+        <meta name="description" content="Software Engineer specializing in building exceptional digital experiences.">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+        <!-- Icons -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                // Enables toggling via a class on HTML tag
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
+                            mono: ['JetBrains Mono', 'monospace'],
+                        },
+                        colors: {
+                            slate: {
+                                850: '#151e32',
+                                900: '#0f172a',
+                                950: '#020617',
+                            }
+                        },
+                        animation: {
+                            'scroll': 'scroll 40s linear infinite',
+                            'fadeIn': 'fadeIn 0.8s ease-out forwards',
+                            'slideUp': 'slideUp 0.5s ease-out forwards',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        },
+                        keyframes: {
+                            scroll: {
+                                '0%': { transform: 'translateX(0)' },
+                                '100%': { transform: 'translateX(-50%)' },
+                            },
+                            fadeIn: {
+                                'from': {
+                                    opacity: '0',
+                                    transform: 'translateY(20px)'
+                                },
+                                'to': {
+                                    opacity: '1',
+                                    transform: 'translateY(0)'
+                                },
+                            },
+                            slideUp: {
+                                'from': {
+                                    opacity: '0',
+                                    transform: 'translateY(40px)'
+                                },
+                                'to': {
+                                    opacity: '1',
+                                    transform: 'translateY(0)'
+                                },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <style>
+            /* Custom scrollbar handling for both modes */
+            :root {
+                --scrollbar-bg: #f1f5f9;
+                --scrollbar-thumb: #94a3b8;
+                --scrollbar-thumb-hover: #64748b;
+            }
+            .dark {
+                --scrollbar-bg: #020617;
+                --scrollbar-thumb: #334155;
+                --scrollbar-thumb-hover: #475569;
+            }
+
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: var(--scrollbar-bg);
+            }
+            ::-webkit-scrollbar-thumb {
+                background: var(--scrollbar-thumb);
+                border-radius: 4px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: var(--scrollbar-thumb-hover);
+            }
+
+            .glass-nav {
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+            }
+            .dark .glass-nav {
+                background: rgba(2, 6, 23, 0.8);
+            }
+
+
+
+            /* Hide scrollbar in infinite scroll container but keep functionality */
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+    </head>
+    <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 antialiased selection:bg-teal-500/30 selection:text-teal-600 dark:selection:text-teal-200 overflow-x-hidden transition-colors duration-300">
+
+        <!-- Background Gradients -->
+        <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-60 dark:opacity-100 transition-opacity duration-300">
+            <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="particles" id="particles"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Nicolò Ghignatti</span>
-                </h1>
-                <p class="hero-subtitle">Engineering & Computer Science Student</p>
-                <p class="hero-description">
-                    Passionate about learning something new every day and exploring the latest in technology.
-                    Excited to share projects and insights from a journey where discovery never stops.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn--primary">View Projects</a>
-                    <a href="#contact" class="btn btn--outline">Get In Touch</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number" data-target="4">0</span>
-                        <span class="stat-label">Years Studying</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="7">0</span>
-                        <span class="stat-label">and more projects</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="20">0</span>
-                        <span class="stat-label">and more technologies</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="avatar-container">
-                    <div class="avatar">
-                        <img src="assets/images/nick.jpg" alt="Nick Ghignatti" />
-                    </div>
-                    <div class="avatar-ring"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200 dark:border-slate-800 transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 md:px-6">
+                <div class="flex items-center justify-between h-20">
+                    <a href="#home" class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white hover:opacity-80 transition-opacity">
+                        NG<span class="text-teal-500 dark:text-teal-400">.</span>
+                    </a>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-intro">
-                        As a Computer Science graduate student at the prestigious University of Bologna, I'm passionate about pushing the boundaries of computational performance and exploring the transformative potential of blockchain technologies.
-                    </p>
-                    <p>
-                        My academic journey has equipped me with a deep understanding of distributed systems, parallel computing, and modern web technologies. When I'm not optimizing algorithms or building decentralized applications, you'll find me contributing to open-source projects and staying at the forefront of technological innovation.
-                    </p>
-                    <div class="about-interests">
-                        <div class="interest-item">
-                            <span class="interest-icon">⚡</span>
-                            <div>
-                                <h4>High-Performance Computing</h4>
-                                <p>Optimizing parallel algorithms and distributed systems for maximum computational efficiency.</p>
-                            </div>
-                        </div>
-                        <div class="interest-item">
-                            <span class="interest-icon">⛓️</span>
-                            <div>
-                                <h4>Software Engineering</h4>
-                                <p>Love builds technology, solving problems and learning new things every project.</p>
-                            </div>
-                        </div>
-                        <div class="interest-item">
-                            <span class="interest-icon">🌐</span>
-                            <div>
-                                <h4>Distributed Systems</h4>
-                                <p>Designing scalable architectures that can handle massive computational workloads.</p>
-                            </div>
-                        </div>
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center gap-2" id="desktop-menu">
+                        <!-- Nav items injected by JS -->
                     </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <h3>🎓</h3>
-                        <div class="stat-info">
-                            <span class="stat-title">Education</span>
-                            <span class="stat-desc">University of Bologna</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>📍</h3>
-                        <div class="stat-info">
-                            <span class="stat-title">Location</span>
-                            <span class="stat-desc">Brescia, Italy</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <h3>💡</h3>
-                        <div class="stat-info">
-                            <span class="stat-title">Focus Areas</span>
-                            <span class="stat-desc">HPC & Software Engineering</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Skills Banner Section -->
-    <section id="skills" class="section skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <p class="skills-subtitle">My technical expertise across different domains</p>
-            
-            <div class="skills-banner-container">
-                <div class="skills-banner" id="skills-banner">
-                    <div class="skills-track">
-                        <!-- Skills from the data -->
-                        <div class="skill-item" data-skill="Java">
-                            <span class="skill-icon">☕</span>
-                            <span class="skill-name">Java</span>
-                        </div>
-                        <div class="skill-item" data-skill="C">
-                            <span class="skill-icon">🔧</span>
-                            <span class="skill-name">C</span>
-                        </div>
-                        <div class="skill-item" data-skill="Python">
-                            <span class="skill-icon">🐍</span>
-                            <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-item" data-skill="C#">
-                            <span class="skill-icon">🔷</span>
-                            <span class="skill-name">C#</span>
-                        </div>
-                        <div class="skill-item" data-skill="PHP">
-                            <span class="skill-icon">🐘</span>
-                            <span class="skill-name">PHP</span>
-                        </div>
-                        <div class="skill-item" data-skill="Rust">
-                            <span class="skill-icon">🦀</span>
-                            <span class="skill-name">Rust</span>
-                        </div>
-                        <div class="skill-item" data-skill="CUDA">
-                            <span class="skill-icon">🎮</span>
-                            <span class="skill-name">CUDA</span>
-                        </div>
-                        <div class="skill-item" data-skill="Scala">
-                            <span class="skill-icon">📈</span>
-                            <span class="skill-name">Scala</span>
-                        </div>
-                        <div class="skill-item" data-skill="GoLang">
-                            <span class="skill-icon">🐹</span>
-                            <span class="skill-name">GoLang</span>
-                        </div>
-                        <div class="skill-item" data-skill="SQL">
-                            <span class="skill-icon">🗃️</span>
-                            <span class="skill-name">SQL</span>
-                        </div>
-                        <div class="skill-item" data-skill="JavaScript">
-                            <span class="skill-icon">🟨</span>
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-                        <div class="skill-item" data-skill="Vue">
-                            <span class="skill-icon">💚</span>
-                            <span class="skill-name">Vue</span>
-                        </div>
-                        <div class="skill-item" data-skill="TypeScript">
-                            <span class="skill-icon">🔵</span>
-                            <span class="skill-name">TypeScript</span>
-                        </div>
-                        <div class="skill-item" data-skill="Docker">
-                            <span class="skill-icon">🐳</span>
-                            <span class="skill-name">Docker</span>
-                        </div>
-                        
-                        <!-- Duplicate for seamless scrolling -->
-                        <div class="skill-item" data-skill="Java">
-                            <span class="skill-icon">☕</span>
-                            <span class="skill-name">Java</span>
-                        </div>
-                        <div class="skill-item" data-skill="C">
-                            <span class="skill-icon">🔧</span>
-                            <span class="skill-name">C</span>
-                        </div>
-                        <div class="skill-item" data-skill="Python">
-                            <span class="skill-icon">🐍</span>
-                            <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-item" data-skill="C#">
-                            <span class="skill-icon">🔷</span>
-                            <span class="skill-name">C#</span>
-                        </div>
-                        <div class="skill-item" data-skill="PHP">
-                            <span class="skill-icon">🐘</span>
-                            <span class="skill-name">PHP</span>
-                        </div>
-                        <div class="skill-item" data-skill="Rust">
-                            <span class="skill-icon">🦀</span>
-                            <span class="skill-name">Rust</span>
-                        </div>
-                        <div class="skill-item" data-skill="CUDA">
-                            <span class="skill-icon">🎮</span>
-                            <span class="skill-name">CUDA</span>
-                        </div>
-                        <div class="skill-item" data-skill="Scala">
-                            <span class="skill-icon">📈</span>
-                            <span class="skill-name">Scala</span>
-                        </div>
-                        <div class="skill-item" data-skill="GoLang">
-                            <span class="skill-icon">🐹</span>
-                            <span class="skill-name">GoLang</span>
-                        </div>
-                        <div class="skill-item" data-skill="SQL">
-                            <span class="skill-icon">🗃️</span>
-                            <span class="skill-name">SQL</span>
-                        </div>
-                        <div class="skill-item" data-skill="JavaScript">
-                            <span class="skill-icon">🟨</span>
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-                        <div class="skill-item" data-skill="Vue">
-                            <span class="skill-icon">💚</span>
-                            <span class="skill-name">Vue</span>
-                        </div>
-                        <div class="skill-item" data-skill="TypeScript">
-                            <span class="skill-icon">🔵</span>
-                            <span class="skill-name">TypeScript</span>
-                        </div>
-                        <div class="skill-item" data-skill="Docker">
-                            <span class="skill-icon">🐳</span>
-                            <span class="skill-name">Docker</span>
-                        </div>
+                    <!-- Right Side: Toggle & Hire Me -->
+                    <div class="hidden md:flex items-center gap-4">
+                        <!-- Theme Toggle -->
+                        <button onclick="toggleTheme()" class="p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Theme">
+                            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                            <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                        </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="hpc">HPC</button>
-                <button class="filter-btn" data-filter="web3">Web3</button>
-                <button class="filter-btn" data-filter="functional">Functional</button>
-                <button class="filter-btn" data-filter="contribution">Open source contribution</button>
-<!--                <button class="filter-btn" data-filter="full-stack">Full-Stack</button>-->
-            </div>
-            <div class="projects-grid">
-                <div class="project-card" data-category="hpc">
-                    <div class="project-image">
-                        <img src="assets/images/project_3.png" alt="HPC_project">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/NickGhignatti/hpc-project" target="_blank" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">HPC University project</h3>
-                        <p class="project-description">Project done at the end of the HPC course in university.</p>
-                        <div class="project-tags">
-                            <span class="tag">C</span>
-                            <span class="tag">OpenMP</span>
-                            <span class="tag">MPI</span>
-                            <span class="tag">Cuda</span>
-                        </div>
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web3">
-                    <div class="project-image">
-                        <img src="assets/images/project_2.png" alt="web3">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/NickGhignatti/stakeshare" target="_blank" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Stakeshare</h3>
-                        <p class="project-description">A web3 application to manage event shares on ICP blockchain</p>
-                        <div class="project-tags">
-                            <span class="tag">Rust</span>
-                            <span class="tag">ICP</span>
-                        </div>
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="hpc, distributed">
-                    <div class="project-image">
-                        <img src="assets/images/project_5.png" alt="agario">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/NickGhignatti/akka-agar.io" target="_blank" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Akka Agar.IO</h3>
-                        <p class="project-description">Implementation of the notorious game Agar.IO using Akka actors.</p>
-                        <div class="project-tags">
-                            <span class="tag">Scala</span>
-                            <span class="tag">Akka</span>
-                        </div>
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="functional, scala">
-                    <div class="project-image">
-                        <img src="assets/images/project_4.png" alt="casimo">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/NickGhignatti/casimo" target="_blank" class="project-link">GitHub</a>
-                                <a href="https://nickghignatti.github.io/casimo/" target="_blank" class="project-link">Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Casimo</h3>
-                        <p class="project-description">A casinò simulator.</p>
-                        <div class="project-tags">
-                            <span class="tag">Scala</span>
-                            <span class="tag">TDD</span>
-                            <span class="tag">ScalaJS</span>
-                            <span class="tag">Functional programming</span>
-                        </div>
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="hpc, distributed">
-                    <div class="project-image">
-                        <img src="assets/images/project_6.png" alt="boids">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/NickGhignatti/akka-distributed-boids" target="_blank" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Akka distributed boids</h3>
-                        <p class="project-description">A boids simulation implementation using Akka actors.</p>
-                        <div class="project-tags">
-                            <span class="tag">Scala</span>
-                            <span class="tag">Akka</span>
-                        </div>
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="oop, java">
-                    <div class="project-image">
-                        <img src="assets/images/project_1.png" alt="pixformer">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/iamgio/OOP22-pixformer" target="_blank" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Pixformer</h3>
-                        <p class="project-description">Super Mario inspired game implementation using Java.</p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">OOP</span>
-                        </div>
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="functional, distributed">
-                    <div class="project-image">
-                        <img src="assets/images/project_7.png" alt="phaint">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/drptms/phaint" target="_blank" class="project-link">GitHub FE</a>
-                                <a href="https://github.com/drptms/phaint_be" target="_blank" class="project-link">GitHub BE</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Phaint</h3>
-                        <p class="project-description">Collaborative drawing app.</p>
-                        <div class="project-tags">
-                            <span class="tag">GoLang</span>
-                            <span class="tag">Svelte</span>
-                            <span class="tag">Firebase</span>
-                        </div>
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="contribution">
-                    <div class="project-image">
-                        <img src="assets/images/project_8.png" alt="rustbook">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/QMHTMY/RustBook" target="_blank" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">The Rustbook</h3>
-                        <p class="project-description"></p>
-                        <div class="project-tags">
-                            <span class="tag">Rust</span>
-                        </div>
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="functional, rust">
-                    <div class="project-image">
-                        <img src="assets/images/project_9.png" alt="glyphit">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/NickGhignatti/glyphit" target="_blank" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Glyphit</h3>
-                        <p class="project-description">Git commit with emoji tool.</p>
-                        <div class="project-tags">
-                            <span class="tag">Rust</span>
-                            <span class="tag">TDD</span>
-                            <span class="tag">Functional programming</span>
-                        </div>
-                        <div class="project-status in-progress">In progress</div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="functional, rust, hpc">
-                    <div class="project-image">
-                        <img src="assets/images/project_10.png" alt="rusterer3d">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/NickGhignatti/Rusterer3d" target="_blank" class="project-link">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Rusterer3d</h3>
-                        <p class="project-description">A basic 3d renderer in rust.</p>
-                        <div class="project-tags">
-                            <span class="tag">Rust</span>
-                            <span class="tag">Functional programming</span>
-                            <span class="tag">HPC</span>
-                        </div>
-                        <div class="project-status in-progress">In progress</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Let's Work Together</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>I'm always open to discussing new opportunities, collaborations, or just having a conversation about technology and innovation.</p>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:nick.ghignatti@gmail.com">nick.ghignatti@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <h4>Location</h4>
-                                <span>Brescia, Italy</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">💼</span>
-                            <div>
-                                <h4>Status</h4>
-                                <span>Available for opportunities</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/nickghignatti" target="_blank" class="social-link">
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/nicol%C3%B2-ghignatti-8884652b3/" target="_blank" class="social-link">
-                            <span>LinkedIn</span>
+                    <!-- Mobile Controls -->
+                    <div class="md:hidden flex items-center gap-4">
+                        <button onclick="toggleTheme()" class="p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                            <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                        </button>
+                        <a href="#contact" class="text-sm bg-teal-500/10 text-teal-600 dark:text-teal-400 px-3 py-1 rounded-full border border-teal-500/20 font-medium">
+                            Hire Me
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Nicolò Ghignatti</h3>
-                    <p>Engineering & Computer Science Student</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#hero">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://github.com/nickghignatti" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/nicol%C3%B2-ghignatti-8884652b3/" target="_blank">LinkedIn</a>
-                </div>
+            <!-- Mobile Bottom Nav -->
+            <div class="md:hidden fixed bottom-6 left-6 right-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 rounded-2xl p-3 flex justify-between shadow-2xl z-50" id="mobile-menu">
+                <!-- Mobile nav items injected by JS -->
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nicolò Ghignatti. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </nav>
 
-    <script src="assets/js/app.js"></script>
-</body>
+        <!-- Main Content -->
+        <main class="relative z-10">
+
+            <!-- HERO SECTION -->
+            <section id="home" class="min-h-screen flex items-center pt-20 px-4 md:px-6 max-w-7xl mx-auto">
+                <div class="w-full flex flex-col md:flex-row items-center gap-12 md:gap-20 animate-fadeIn">
+
+                    <!-- Text Content -->
+                    <div class="flex-1 flex flex-col items-start justify-center order-2 md:order-1 text-center md:text-left">
+                        <div class="inline-block px-4 py-2 mb-6 text-sm font-semibold tracking-wider text-teal-600 dark:text-teal-300 uppercase bg-teal-500/10 rounded-full border border-teal-500/20 mx-auto md:mx-0">
+                            Available for hire
+                        </div>
+                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-slate-900 dark:text-white mb-8 leading-tight">
+                            Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 dark:from-teal-400 dark:to-purple-500">Nick</span>.
+                            <br/>
+                            I build things.
+                        </h1>
+                        <p class="text-lg md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mb-10 leading-relaxed mx-auto md:mx-0">
+                            Passionate about learning something new every day and exploring the latest in technology.
+                            Excited to share projects and insights from a journey where discovery never stops.
+                        </p>
+                        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                            <a href="#projects" class="group flex items-center gap-2 px-8 py-4 bg-teal-500 hover:bg-teal-600 text-white dark:text-slate-900 font-bold rounded-lg transition-all text-lg shadow-lg shadow-teal-500/20">
+                                View Projects
+                                <i data-lucide="chevron-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="#contact" class="px-8 py-4 bg-transparent border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:border-slate-900 dark:hover:border-white hover:text-slate-900 dark:hover:text-white rounded-lg transition-all font-medium text-lg">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Image Content -->
+                    <div class="order-1 md:order-2 flex-shrink-0 relative group mt-10 md:mt-0">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-slate-200 dark:border-slate-800 shadow-2xl ring-2 ring-slate-200/50 dark:ring-slate-700/50 bg-white dark:bg-slate-900">
+                            <img
+                                src="https://github.com/nickghignatti.png"
+                                alt="Nick Ghignatti"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS SECTION (Infinite Scroll) -->
+            <section id="skills" class="py-24 bg-white/50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 md:px-6 mb-12 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 dark:from-teal-400 dark:to-purple-500 inline-block mb-3">
+                        Skills & Technologies
+                    </h2>
+                    <div class="h-1 w-20 bg-teal-500 rounded-full mb-4 mx-auto md:mx-0"></div>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto md:mx-0">My technical toolkit and proficiency</p>
+                </div>
+
+                <div class="relative w-full overflow-hidden py-10 bg-slate-50/50 dark:bg-slate-950/50">
+                    <!-- Gradient Masks -->
+                    <div class="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-slate-50/90 dark:from-slate-950/90 to-transparent z-10"></div>
+                    <div class="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-slate-50/90 dark:from-slate-950/90 to-transparent z-10"></div>
+
+                    <!-- Scroll Track -->
+                    <div class="flex w-max animate-scroll hover:[animation-play-state:paused]" id="skills-track"></div>
+                </div>
+            </section>
+
+            <!-- PROJECTS SECTION -->
+            <section id="projects" class="py-32 px-4 md:px-6 max-w-7xl mx-auto">
+                <div class="mb-12 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 dark:from-teal-400 dark:to-purple-500 inline-block mb-3">
+                        Featured Projects
+                    </h2>
+                    <div class="h-1 w-20 bg-teal-500 rounded-full mb-4 mx-auto md:mx-0"></div>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto md:mx-0">A selection of things I've built</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid"></div>
+            </section>
+
+            <!-- BLOG SECTION -->
+            <section id="blog" class="py-32 px-4 md:px-6 max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800/50">
+                <div class="mb-12 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 dark:from-teal-400 dark:to-purple-500 inline-block mb-3">
+                        My Blog
+                    </h2>
+                    <div class="h-1 w-20 bg-teal-500 rounded-full mb-4 mx-auto md:mx-0"></div>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto md:mx-0">Thoughts on code, design, and tech</p>
+                </div>
+
+                <!-- Blog List View -->
+                <div id="blog-list" class="grid gap-6"></div>
+
+                <!-- Blog Detail View (Hidden by default) -->
+                <div id="blog-detail" class="hidden bg-white/50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 md:p-12 animate-slideUp shadow-xl dark:shadow-none">
+                    <button onclick="closePost()" class="text-teal-600 dark:text-teal-400 mb-8 flex items-center gap-2 hover:underline font-medium">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to articles
+                    </button>
+                    <span id="post-meta" class="text-slate-500 text-sm font-mono mb-4 block"></span>
+                    <h2 id="post-title" class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8"></h2>
+                    <div class="prose prose-lg text-slate-600 dark:text-slate-300 max-w-none">
+                        <p id="post-content" class="leading-relaxed"></p>
+                        <p class="mt-8 italic text-slate-500 p-4 bg-slate-100 dark:bg-slate-900/50 rounded-lg border-l-4 border-teal-500">
+                            (This is a demo blog post content placeholder.)
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESUME SECTION -->
+            <section id="resume" class="py-32 px-4 md:px-6 max-w-7xl mx-auto">
+                <div class="mb-12 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 dark:from-teal-400 dark:to-purple-500 inline-block mb-3">
+                        Resume
+                    </h2>
+                    <div class="h-1 w-20 bg-teal-500 rounded-full mb-4 mx-auto md:mx-0"></div>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto md:mx-0">My professional journey</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-16 items-center lg:items-start">
+                    <!-- Visual Preview of CV -->
+                    <div class="relative group perspective-1000 w-full max-w-lg mx-auto lg:mx-0">
+                        <div class="relative bg-white text-slate-800 aspect-[1/1.41] rounded-sm shadow-2xl p-8 transform transition-transform duration-500 group-hover:rotate-x-2 group-hover:-translate-y-2 overflow-hidden border border-slate-200 dark:border-transparent">
+                            <!-- Decorative Skeleton UI for CV -->
+                            <div class="flex justify-between items-start mb-8 border-b-2 border-slate-800 pb-6">
+                                <div>
+                                    <div class="h-8 w-48 bg-slate-900 mb-3"></div>
+                                    <div class="h-4 w-64 bg-slate-500"></div>
+                                </div>
+                                <div class="h-16 w-16 bg-slate-200 rounded-full"></div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div class="h-4 w-32 bg-slate-700 mb-2"></div>
+                                <div class="space-y-3 pl-4 border-l-2 border-slate-200">
+                                    <div class="h-4 w-1/3 bg-slate-600"></div>
+                                    <div class="h-2 w-full bg-slate-300"></div>
+                                    <div class="h-2 w-full bg-slate-300"></div>
+                                </div>
+                                <div class="space-y-3 pl-4 border-l-2 border-slate-200">
+                                    <div class="h-4 w-1/4 bg-slate-600"></div>
+                                    <div class="h-2 w-full bg-slate-300"></div>
+                                    <div class="h-2 w-5/6 bg-slate-300"></div>
+                                </div>
+                                <div class="space-y-3 pl-4 border-l-2 border-slate-200">
+                                    <div class="h-4 w-1/3 bg-slate-600"></div>
+                                    <div class="h-2 w-full bg-slate-300"></div>
+                                </div>
+                            </div>
+
+                            <!-- Overlay on hover -->
+                            <div class="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors flex items-center justify-center"></div>
+                        </div>
+
+                        <!-- Glow behind -->
+                        <div class="absolute inset-0 bg-teal-500 blur-[60px] opacity-20 -z-10 transform translate-y-10 scale-90"></div>
+                    </div>
+
+                    <!-- Download & Stats Section -->
+                    <div class="flex-1 space-y-8 w-full">
+                        <div class="space-y-6">
+                            <h3 class="text-3xl font-bold text-slate-900 dark:text-white">Ready to know more?</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                                Download my personal Resume!
+                            </p>
+                            <!--<div class="grid grid-cols-2 gap-6">-->
+                            <!--    <div class="bg-white/60 dark:bg-slate-800/30 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm dark:shadow-none">-->
+                            <!--        <div class="text-4xl font-bold text-teal-500 dark:text-teal-400 mb-1">3+</div>-->
+                            <!--        <div class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">Years Exp.</div>-->
+                            <!--    </div>-->
+                            <!--    <div class="bg-white/60 dark:bg-slate-800/30 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm dark:shadow-none">-->
+                            <!--        <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-1">15+</div>-->
+                            <!--        <div class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">Projects</div>-->
+                            <!--    </div>-->
+                            <!--</div>-->
+                        </div>
+
+                        <a href="resume/resume.pdf" download class="flex items-center justify-center gap-3 w-full bg-teal-500 hover:bg-teal-600 text-white dark:text-slate-900 font-bold py-4 px-8 rounded-xl transition-all transform active:scale-95 shadow-lg hover:shadow-teal-500/20 text-lg">
+                            <i data-lucide="download" class="w-6 h-6"></i>
+                            Download Full Resume
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="py-32 px-4 md:px-6 max-w-4xl mx-auto text-center">
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 dark:from-teal-400 dark:to-purple-500 inline-block mb-3">
+                        Get In Touch
+                    </h2>
+                    <div class="h-1 w-20 bg-teal-500 rounded-full mb-4 mx-auto"></div>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">Let's build something together</p>
+                </div>
+
+                <div class="flex justify-center gap-8">
+                    <a href="https://github.com/nickghignatti" target="_blank" class="p-4 bg-white dark:bg-slate-800 rounded-full text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 hover:scale-110 transform shadow-sm">
+                        <i data-lucide="github" class="w-7 h-7"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicol%C3%B2-ghignatti-8884652b3/" class="p-4 bg-white dark:bg-slate-800 rounded-full text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 hover:scale-110 transform shadow-sm">
+                        <i data-lucide="linkedin" class="w-7 h-7"></i>
+                    </a>
+                    <a href="mailto:nick.ghignatti@gmail.com" class="p-4 bg-white dark:bg-slate-800 rounded-full text-slate-500 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 hover:scale-110 transform shadow-sm">
+                        <i data-lucide="mail" class="w-7 h-7"></i>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="relative z-10 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 py-12 text-center text-slate-500 dark:text-slate-500">
+            <p class="mb-2">© 2025 Nick Ghignatti.</p>
+            <p class="text-sm">Built with HTML, Tailwind CSS & JavaScript.</p>
+        </footer>
+
+        <!-- JAVASCRIPT LOGIC -->
+        <script src="scripts/index.js"></script>
+    </body>
 </html>
