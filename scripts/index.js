@@ -104,11 +104,6 @@ const navItems = [
         icon: 'user'
     },
     {
-        id: 'skills',
-        label: 'Skills',
-        icon: 'cpu'
-    },
-    {
         id: 'projects',
         label: 'Projects',
         icon: 'terminal'
@@ -122,12 +117,7 @@ const navItems = [
         id: 'resume',
         label: 'CV',
         icon: 'file-text'
-    },
-    {
-        id: 'contact',
-        label: 'Contact',
-        icon: 'mail'
-    },
+    }
 ];
 
 // --- THEME TOGGLE LOGIC ---
