@@ -1,0 +1,39 @@
+body {
+    background-color: #F5F5DC;
+    color: #44403c; /* stone-700 */
+}
+
+/* Cream Paper Texture Overlay */
+.texture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    mix-blend-mode: multiply;
+    z-index: 0;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Selection Colors */
+::selection {
+    background-color: #fde68a; /* amber-200 */
+    color: #78350f; /* amber-900 */
+}
+
+/* Navigation Active State */
+.nav-link.active {
+    color: #78350f;
+    border-bottom: 2px solid #78350f;
+}
